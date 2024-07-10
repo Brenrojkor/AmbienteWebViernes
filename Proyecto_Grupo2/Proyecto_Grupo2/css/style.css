@@ -49,7 +49,7 @@ h6 {
 }
 
 h1 {
-    font-size: 24px
+    font-size: 21px
 }
 
 h2 {
@@ -466,7 +466,7 @@ ul.social_top_icon li a:hover {
 }
 
 .banner_main {
-    background: url(../images/banner.jpg.);
+    background: url(../images/banner.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -864,6 +864,10 @@ ul.social_top_icon li a:hover {
 .send:hover {
     background: #000;
     color: #fff;
+}
+.Reviwe_box img {
+    width: 200px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantener la proporción de la imagen */
 }
 
 
