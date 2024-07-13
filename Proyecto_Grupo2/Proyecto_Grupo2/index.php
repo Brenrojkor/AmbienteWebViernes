@@ -37,39 +37,66 @@
 
     <div class="wrapper">
         <!-- end loader -->
-
         <div class="sidebar">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
 
-                <div id="dismiss">
-                    <i class="fa fa-arrow-left"></i>
-                </div>
+        <div id="dismiss">
+            <i class="fa fa-arrow-left"></i>
+        </div>
 
-                <ul class="list-unstyled components">
+        <ul class="list-unstyled components">
 
-                    <li class="active">
-                        <a href="index.html">Home</a>
+            <li class="active">
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
+                <ul class="collapse list-unstyled" id="matriculaSubmenu">
+                    <li>
+                        <a href="#futbol">Futbol</a>
                     </li>
                     <li>
-                        <a href="#about">About Us</a>
+                        <a href="#natacion">Natacion</a>
                     </li>
                     <li>
-                        <a href="#training">Entrenamiento</a>
-                    </li>
-                    <li>
-                        <a href="#gallery">Galería</a>
-                    </li>
-                    <li>
-                        <a href="#review">Review</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contactos</a>
+                        <a href="#tenis">Tenis</a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="#noticias">Noticias</a>
+            </li>
+            <li>
+                <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
+                <ul class="collapse list-unstyled" id="eventosSubmenu">
+                    <li>
+                        <a href="#calendario">Calendario</a>
+                    </li>
+                    <li>
+                        <a href="#actividades">Actividades</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
+                <ul class="collapse list-unstyled" id="contactoSubmenu">
+                    <li>
+                        <a href="#soporte">Soporte</a>
+                    </li>
+                    <li>
+                        <a href="#preguntasFrecuentes">Preguntas frecuentes</a>
+                    </li>
+                </ul>
+            </li>
 
-            </nav>
-        </div>
+        </ul>
+
+    </nav>
+</div>
+
+
+        
 
         <div id="content">
             <!-- header -->
