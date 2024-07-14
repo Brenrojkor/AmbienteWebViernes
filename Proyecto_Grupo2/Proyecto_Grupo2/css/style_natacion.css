@@ -1,0 +1,127 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0; /* Añade esto si no está ya en style.css */
+}
+
+.futbol {
+    padding: 20px;
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+}
+
+/* Ajustes específicos para asegurar que no haya margen superior en el artículo */
+#content {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+header {
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+}
+
+.carousel-inner img {
+    height: 800px;
+    object-fit: cover;
+}
+
+.resumen-academia p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tabla-horarios {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tabla-horarios .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.tabla-horarios .table th,
+.tabla-horarios .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.tabla-horarios .table th {
+    background-color: #ff6600;
+    color: #fff;
+    border-color: #ff6600;
+}
+
+.tabla-horarios .table td {
+    border-color: #ff6600;
+}
+
+.formulario-matricula {
+    margin-top: 20px;
+}
+
+.formulario-matricula h3 {
+    margin-bottom: 20px;
+    color: #ff6600;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.formulario-matricula .form-group label {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.formulario-matricula .form-group input {
+    border: 1px solid #ff6600;
+    border-radius: 5px;
+}
+
+.formulario-matricula .btn-primary {
+    background-color: #3575ff;
+    border-color: #1271ff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.formulario-matricula .btn-primary:hover {
+    background-color: #2e4dff;
+    border-color: #2e43ff;
+}
+
+/* General Styles for Sidebar and Footer */
+.sidebar {
+    background-color: #ff6600;
+}
+
+.sidebar .components li a {
+    color: #fff;
+}
+
+.sidebar .components li a:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .footer_top ul.location_icon li a,
+footer .footer_top ul.social_icon li a {
+    color: #fff;
+}
+
+footer .footer_top ul.location_icon li a:hover,
+footer .footer_top ul.social_icon li a:hover {
+    color: #333;
+}

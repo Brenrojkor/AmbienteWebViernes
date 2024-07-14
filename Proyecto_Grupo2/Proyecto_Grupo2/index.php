@@ -54,13 +54,13 @@
                 <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
                 <ul class="collapse list-unstyled" id="matriculaSubmenu">
                     <li>
-                        <a href="#futbol">Futbol</a>
+                        <a href="futbol.php">Futbol</a>
                     </li>
                     <li>
-                        <a href="#natacion">Natacion</a>
+                        <a href="natacion.php">Natacion</a>
                     </li>
                     <li>
-                        <a href="#tenis">Tenis</a>
+                        <a href="tenis.php">Tenis</a>
                     </li>
                 </ul>
             </li>
@@ -85,7 +85,7 @@
                         <a href="#soporte">Soporte</a>
                     </li>
                     <li>
-                        <a href="#preguntasFrecuentes">Preguntas frecuentes</a>
+                        <a href="faq.php">Preguntas frecuentes</a>
                     </li>
                 </ul>
             </li>

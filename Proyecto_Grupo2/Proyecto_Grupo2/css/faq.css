@@ -1,0 +1,97 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-orange {
+    background-color: #ff6600;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+}
+
+.faq-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 36px;
+    color: #ff6600;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.accordion .card {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.accordion .card-header {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.accordion .btn-link {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .btn-link:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+
+.accordion .card-body {
+    border: 1px solid #ddd;
+    border-top: none;
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* Estilos del footer importados desde style.css */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .footer_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .location_icon,
+footer .social_icon {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+footer .location_icon li,
+footer .social_icon li {
+    margin-right: 20px;
+}
+
+footer .location_icon li a,
+footer .social_icon li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+footer .location_icon li a:hover,
+footer .social_icon li a:hover {
+    color: #ff6600;
+}
+
+footer p {
+    text-align: center;
+    margin: 20px 0 0;
+}
