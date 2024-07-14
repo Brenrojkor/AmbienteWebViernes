@@ -37,39 +37,69 @@
 
     <div class="wrapper">
         <!-- end loader -->
-
         <div class="sidebar">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
 
-                <div id="dismiss">
-                    <i class="fa fa-arrow-left"></i>
-                </div>
+        <div id="dismiss">
+            <i class="fa fa-arrow-left"></i>
+        </div>
 
-                <ul class="list-unstyled components">
+        <ul class="list-unstyled components">
 
-                    <li class="active">
-                        <a href="index.html">Home</a>
+            <li class="active">
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
+                <ul class="collapse list-unstyled" id="matriculaSubmenu">
+                    <li>
+                        <a href="futbol.php">Futbol</a>
                     </li>
                     <li>
-                        <a href="#about">About Us</a>
+                        <a href="natacion.php">Natacion</a>
                     </li>
                     <li>
-                        <a href="#training">Entrenamiento</a>
+                        <a href="tenis.php">Tenis</a>
                     </li>
                     <li>
-                        <a href="#gallery">Galería</a>
-                    </li>
-                    <li>
-                        <a href="#review">Review</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contactos</a>
+                        <a href="pingpong.php">Ping Pong</a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="#noticias">Noticias</a>
+            </li>
+            <li>
+                <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
+                <ul class="collapse list-unstyled" id="eventosSubmenu">
+                    <li>
+                        <a href="#calendario">Calendario</a>
+                    </li>
+                    <li>
+                        <a href="#actividades">Actividades</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
+                <ul class="collapse list-unstyled" id="contactoSubmenu">
+                    <li>
+                        <a href="#soporte">Soporte</a>
+                    </li>
+                    <li>
+                        <a href="faq.php">Preguntas frecuentes</a>
+                    </li>
+                </ul>
+            </li>
 
-            </nav>
-        </div>
+        </ul>
+
+    </nav>
+</div>
+
+
+        
 
         <div id="content">
             <!-- header -->
@@ -114,7 +144,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main_text">
-                                <h1>Bienvenidos <br><strong class="bold_text">Polideportivo</strong><br><strong class="bold_text_black">Santo Domingo</strong></h1>
+                            <?php echo '<h1>Bienvenidos <br><strong class="bold_text">Polideportivo</strong><br><strong class="bold_text_black">Santo Domingo</strong></h1>'; ?>
                                 <span>Polideportivo de Santo Domingo donde podrás encontrar los horarios de nuestras actividades e inscribirte a nuestras clases disponibles.</span>
                                 <a href="#">Leer más <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
