@@ -71,7 +71,7 @@
                 <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
                 <ul class="collapse list-unstyled" id="eventosSubmenu">
                     <li>
-                        <a href="#calendario">Calendario</a>
+                        <a href="#calendario.php">Calendario</a>
                     </li>
                     <li>
                         <a href="#actividades">Actividades</a>
