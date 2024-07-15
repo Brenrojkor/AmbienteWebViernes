@@ -20,7 +20,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
     <!--style tema -->
-    <link rel=" stylesheet"  href="css/style_futbol.css">
+    <link rel=" stylesheet"  href="css/style_pingpong.css">
 
     <!-- responsive-->
     <link rel="stylesheet" href="css/responsive.css">
