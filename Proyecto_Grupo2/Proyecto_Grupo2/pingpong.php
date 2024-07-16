@@ -1,3 +1,7 @@
+<?php
+include 'header.php'; // Incluir el encabezado de la página
+#include 'horario_func.php'; // Incluir la función para mostrar horarios de fútbol
+?>
 <!DOCTYPE html>
 <html lang="en">
 

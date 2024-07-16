@@ -4,10 +4,10 @@
   define("DB_PASSWORD", "");
   define("DB_DATABASE", "bd_polideportivo");
 
-  $db = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+  $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
   // you could test connection eventually using a if and else conditional statement, 
   // feel free to take out the code below once you see Connected!
-  if ($db) {
+  if ($conn) {
     echo "Connected!";
   } else {
     echo "Connection Failed";

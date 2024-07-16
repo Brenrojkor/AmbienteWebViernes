@@ -2,26 +2,28 @@
 // Archivo: registro.php
 
 session_start();
-include 'conexion.php'; // Asegúrate de incluir correctamente tu archivo de conexión aquí
+include 'conexion.php'; 
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $nombre = $_POST['nombre']; // Añadimos el nombre
+    $rol = 'cliente'; // Añadimos el rol por defecto
 
     // Encriptar la contraseña
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $contrasena_encriptada = password_hash($password, PASSWORD_DEFAULT);
 
     // Preparar y ejecutar la consulta SQL para insertar el usuario
-    $query = "INSERT INTO usuarios (correo, contrasena) VALUES (?, ?)";
+    $query = "INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
 
     if ($stmt === false) {
-        die('Error al preparar la consulta.');
+        die('Error al preparar la consulta: ' . $conn->error);
     }
 
-    $stmt->bind_param("ss", $email, $hashed_password);
+    $stmt->bind_param("ssss", $nombre, $email, $contrasena_encriptada, $rol);
 
     if ($stmt->execute()) {
         // Éxito al registrar usuario
@@ -52,6 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2>Registro de Usuario</h2>
         <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
         <form action="registro.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required>
             <label for="password">Contraseña:</label>

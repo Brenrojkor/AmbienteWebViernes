@@ -2,7 +2,7 @@
 // Archivo: login.php
 
 session_start();
-include 'conexion.php'; // Asegúrate de incluir correctamente tu archivo de conexión aquí
+include 'conexion.php'; 
 
 $error = '';
 
@@ -36,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "Correo electrónico no encontrado.";
     }
+
+    $stmt->close();
 }
 ?>
 

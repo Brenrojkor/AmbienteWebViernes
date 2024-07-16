@@ -111,7 +111,10 @@
                         <a href="login.php">Login</a>
                     </li>
                     <li>
-                        <a href="#register">Register</a>
+                        <a href="registro.php">Register</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Logout</a>
                     </li>
                 </ul>
             </li>

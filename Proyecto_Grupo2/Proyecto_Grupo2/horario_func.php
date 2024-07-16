@@ -5,22 +5,11 @@ session_start(); // Iniciar sesión para acceder a las variables de sesión
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     // Si no es admin, redirigir a otra página o mostrar un mensaje de acceso denegado
     header("Location: index.php"); // Ejemplo de redirección si no es admin
-    exit; // Finalizar la ejecución del script
+    exit(); // Finalizar la ejecución del script
 }
 
-// Conexión a la base de datos (ajustar según tu configuración)
-$servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "tu_base_de_datos";
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+// Incluir el archivo de conexión
+include 'conexion.php';
 
 // Función para obtener y mostrar los horarios de fútbol desde la base de datos
 function mostrarHorariosFutbol($conn) {
@@ -59,6 +48,9 @@ function mostrarHorariosFutbol($conn) {
         echo "No se encontraron horarios.";
     }
 }
+
+// Mostrar los horarios de fútbol
+mostrarHorariosFutbol($conn);
 
 // Cerrar conexión
 $conn->close();
