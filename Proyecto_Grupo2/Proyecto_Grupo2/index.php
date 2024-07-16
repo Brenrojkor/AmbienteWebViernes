@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +31,12 @@
 <!-- body -->
 
 <body class="main-layout">
+
+
+
+
+
+
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="" /></div>
@@ -41,6 +48,12 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
 
+
+                                        
+    
+
+
+
         <div id="dismiss">
             <i class="fa fa-arrow-left"></i>
         </div>
@@ -50,6 +63,7 @@
             <li class="active">
                 <a href="index.html">Home</a>
             </li>
+            
             <li>
                 <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
                 <ul class="collapse list-unstyled" id="matriculaSubmenu">
@@ -89,6 +103,22 @@
                     </li>
                 </ul>
             </li>
+
+            <li>
+                <a href="#credencialesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Login</a>
+                <ul class="collapse list-unstyled" id="credencialesSubmenu">
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
 
         </ul>
 
@@ -397,7 +427,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <p>© 2024 Polideportivo Santo Domingo Design by<a href="https://html.design/"> Free Html Template</a></p>
+                                <p>© 2024 Polideportivo Santo Domingo Copyright</a></p>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <ul class="social_icon">

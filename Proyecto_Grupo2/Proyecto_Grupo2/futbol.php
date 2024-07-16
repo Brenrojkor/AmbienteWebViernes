@@ -1,5 +1,12 @@
+<?php
+#session_start(); // Iniciar sesión para acceder a las variables de sesión
+include 'header.php'; // Incluir el encabezado de la página
+#include 'mostrar_horarios.php'; // Incluir la función para mostrar horarios de fútbol
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <!-- basic -->
