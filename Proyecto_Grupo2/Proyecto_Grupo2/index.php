@@ -68,13 +68,22 @@
                 <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
                 <ul class="collapse list-unstyled" id="matriculaSubmenu">
                     <li>
+                        <a href="yoga.php">Yoga</a>
+                    </li>
+                    <li>
+                        <a href="natacion.php">Natación</a>
+                    </li>
+                    <li>
                         <a href="futbol.php">Futbol</a>
                     </li>
                     <li>
-                        <a href="natacion.php">Natacion</a>
+                        <a href="pingpong.php">Ping Pong</a>
                     </li>
                     <li>
                         <a href="tenis.php">Tenis</a>
+                    </li>
+                    <li>
+                        <a href="basketball.php">Basketball</a>
                     </li>
                 </ul>
             </li>
@@ -85,7 +94,7 @@
                 <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
                 <ul class="collapse list-unstyled" id="eventosSubmenu">
                     <li>
-                        <a href="#calendario">Calendario</a>
+                        <a href="calendario.php">Calendario</a>
                     </li>
                     <li>
                         <a href="#actividades">Actividades</a>
