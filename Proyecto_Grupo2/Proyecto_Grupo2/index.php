@@ -119,6 +119,16 @@
                 </ul>
             </li>
 
+            <li>
+                <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin</a>
+                <ul class="collapse list-unstyled" id="AdminSubmenu">
+                    <li>
+                        <a href="crud_1/crud.php">Empleados</a>
+                    </li>
+    
+                </ul>
+            </li>
+
 
 
 
