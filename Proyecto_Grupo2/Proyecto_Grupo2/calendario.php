@@ -7,34 +7,14 @@
     <title>Calendario con Bootstrap</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="calendario.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/calendario.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer_top">
-                    <ul class="location_icon">
-                        <li> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    </ul>
-                    <ul class="social_icon">
-                        <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <p>© 2024 Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div id="calendar" class="card">
             <div id="month" class="card-header d-flex justify-content-between align-items-center">
                 <button id="prev" class="btn btn-primary">Anterior</button>
@@ -62,12 +42,34 @@
         </div>
     </div>
 
+    <footer>
+            <div class="footer">
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <p>© 2024 Polideportivo Santo Domingo Copyright</a></p>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <ul class="social_icon">
+                                    <li> <a href="https://www.facebook.com/pages/Polideportivo-Santo-Domingo/221359424559175"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="scripts.js"></script>
+    <!-- Custom JS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const monthNameEl = document.getElementById('month-name');
