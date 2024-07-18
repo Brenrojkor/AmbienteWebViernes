@@ -2,19 +2,31 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario con Bootstrap</title>
+    <title>Preguntas Frecuentes</title>
     <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- FAQ CSS -->
+    <link rel="stylesheet" href="css/faq.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+        @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+    </style>
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-orange">
+        <a class="navbar-brand text-white" href="index.php">Atrás</a>
+    </nav>
+
     <div class="container mt-5 mb-5">
+        <h1 class="faq-title">Calendario</h1>
         <div id="calendar" class="card">
             <div id="month" class="card-header d-flex justify-content-between align-items-center">
                 <button id="prev" class="btn btn-primary">Anterior</button>
@@ -42,27 +54,31 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-            <div class="footer">
-                <div class="copyright">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <p>© 2024 Polideportivo Santo Domingo Copyright</a></p>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <ul class="social_icon">
-                                    <li> <a href="https://www.facebook.com/pages/Polideportivo-Santo-Domingo/221359424559175"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer_top">
+                        <ul class="location_icon">
+                            <li> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <ul class="social_icon">
+                            <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="col-lg-12">
+                    <p>© 2024 Todos los derechos reservados.</p>
+                </div>
             </div>
-        </footer>
-        <!-- end footer -->
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
