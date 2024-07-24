@@ -1,6 +1,5 @@
 <?php
 include("db.php");
-
 // Verificar que se haya pasado un ID
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -24,10 +23,12 @@ if (isset($_GET['id'])) {
     // Redirigir a la página principal del CRUD
     header("Location: crud.php");
     exit();
+
 } else {
     // Si no se pasa un ID, redirigir a la página principal
     $_SESSION['message'] = 'ID no proporcionado';
     $_SESSION['message_type'] = 'danger';
+
     header("Location: crud.php");
     exit();
 }

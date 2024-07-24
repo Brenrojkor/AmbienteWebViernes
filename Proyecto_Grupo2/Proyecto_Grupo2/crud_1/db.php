@@ -1,7 +1,5 @@
 <?php
-session_start();
-
-//Conexion para Cruds
+session_start(); 
 
 $conn = mysqli_connect(
   '127.0.0.1', // host
@@ -10,5 +8,3 @@ $conn = mysqli_connect(
   'bd_polideportivo' // nombre de la base de datos
 ) or die('Error de conexión: ' . mysqli_connect_error());
 ?>
-
-

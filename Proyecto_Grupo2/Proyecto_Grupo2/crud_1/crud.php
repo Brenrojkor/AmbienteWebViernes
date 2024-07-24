@@ -4,7 +4,7 @@
 <main class="container p-4">
   <div class="row">
     <div class="col-md-4">
-      <!-- MESSAGES -->
+      
       <?php if (isset($_SESSION['message'])) { ?>
       <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
         <?= $_SESSION['message']?>
@@ -14,7 +14,7 @@
       </div>
       <?php session_unset(); } ?>
 
-      <!-- ADD EMPLOYEE FORM -->
+    
       <div class="card card-body">
         <form action="save_employee.php" method="POST">
           <div class="form-group">
@@ -58,7 +58,7 @@
             <td><?php echo $row['salario']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
             <td>
-              <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
+              <a href="edit_employee.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
                 <i class="fas fa-marker"></i>
               </a>
               <a href="delete_employee.php?id=<?php echo $row['id']?>" class="btn btn-danger">
