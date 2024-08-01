@@ -13,6 +13,6 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="crud.php">PHP MySQL CRUD</a>
+      <a href="../" class="btn btn-secondary">Volver</a>
       </div>
     </nav>
