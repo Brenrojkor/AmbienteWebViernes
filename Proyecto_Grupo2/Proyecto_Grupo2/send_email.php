@@ -1,5 +1,8 @@
 <?php
-require 'config.php'; // Incluye la configuración de variables de entorno
+// Incluye los archivos necesarios de PHPMailer
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -19,13 +22,13 @@ function enviarFormulario($data, $files) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['MAIL_USERNAME']; // Usa la variable de entorno
-        $mail->Password = $_ENV['MAIL_PASSWORD']; // Usa la variable de entorno
+        $mail->Username = 'tu_correo@gmail.com'; // Reemplaza con tu correo Gmail
+        $mail->Password = 'tu_contraseña'; // Reemplaza con tu contraseña o App Password de Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Remitente
-        $mail->setFrom($_ENV['MAIL_USERNAME'], 'Academia Basketball');
+        $mail->setFrom('tu_correo@gmail.com', 'Academia Basketball');
         
         // Destinatario
         $mail->addAddress('academia@ejemplo.com', 'Academia Basketball');
@@ -62,3 +65,4 @@ function enviarFormulario($data, $files) {
         return false;
     }
 }
+?>
