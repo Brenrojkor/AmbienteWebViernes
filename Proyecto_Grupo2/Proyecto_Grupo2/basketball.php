@@ -1,13 +1,26 @@
 <?php
 include 'header.php'; // Incluir el encabezado de la página
-#include 'horario_func.php'; // Incluir la función para mostrar horarios de fútbol
+include 'send_email.php'; // Incluir el archivo que contiene la función para enviar emails
+
+// Verifica si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Valida y envía el formulario usando la función
+    $resultado = enviarFormulario($_POST, $_FILES);
+
+    if ($resultado) {
+        echo '<div class="alert alert-success" role="alert">Formulario enviado con éxito.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Hubo un problema al enviar el formulario.</div>';
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- basic -->
-    <meta charset="utf-8">
+        <!-- basic -->
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +53,6 @@ include 'header.php'; // Incluir el encabezado de la página
         @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
     </style>
 </head>
-<!-- body -->
 
 <body class="main-layout">
     <!-- loader -->
@@ -56,7 +68,7 @@ include 'header.php'; // Incluir el encabezado de la página
                     <i class="fa fa-arrow-left"></i>
                 </div>
                 <ul class="list-unstyled components">
-                    <!-- ... (el contenido del sidebar) ... -->
+                    <!-- ... (contenido del sidebar) ... -->
                 </ul>
             </nav>
         </div>
@@ -97,15 +109,12 @@ include 'header.php'; // Incluir el encabezado de la página
                 </div>
             </header>
 
-
             <div class="slider_section banner_main">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main_text">
-                            <?php echo '<h1>Academia <br><strong class="bold_text">Basketball</strong><br><strong class="bold_text_black">Santo Domingo</strong></h1>'; ?>
-                                
-                                
+                                <h1>Academia <br><strong class="bold_text">Basketball</strong><br><strong class="bold_text_black">Santo Domingo</strong></h1>
                             </div>
                         </div>
                     </div>
@@ -137,114 +146,112 @@ include 'header.php'; // Incluir el encabezado de la página
                     </a>
                 </div>
 
+                <!-- Resumen de la academia -->
+                <div class="resumen-academia">
+                    <p>
+                        La academia de basketball Santo Domingo se dedica a formar jóvenes talentos en el deporte de canasta, ofreciendo un entorno seguro y motivador donde los niños y adolescentes pueden desarrollar sus habilidades en baloncesto. Con entrenadores altamente calificados y una metodología de enseñanza moderna, garantizamos el crecimiento tanto personal como deportivo de nuestros estudiantes.
+                    </p>
+                    <p>
+                        Nuestras instalaciones están equipadas con todo lo necesario para la práctica de basketball, incluyendo campos señalizados, vestuarios, y áreas de descanso. Además, organizamos torneos y actividades complementarias para fomentar el trabajo en equipo y la competencia sana entre los participantes.
+                    </p>
+                </div>
 
-            <!-- Resumen de la academia -->
-            <div class="resumen-academia">
-                <p>
-                    La academia de basketball Santo Domingo se dedica a formar jóvenes talentos en el deporte de canasta, ofreciendo un entorno seguro y motivador donde los niños y adolescentes pueden desarrollar sus habilidades en baloncesto. Con entrenadores altamente calificados y una metodología de enseñanza moderna, garantizamos el crecimiento tanto personal como deportivo de nuestros estudiantes.
-                </p>
-                <p>
-                    Nuestras instalaciones están equipadas con todo lo necesario para la práctica de basketball, incluyendo campos señalizados, vestuarios, y áreas de descanso. Además, organizamos torneos y actividades complementarias para fomentar el trabajo en equipo y la competencia sana entre los participantes.
-                </p>
-            </div>
+                <!-- Tabla de horarios -->
+                <div class="tabla-horarios">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Horario</th>
+                                <th>Grupo de edad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes</td>
+                                <td>09:00 - 12:00</td>
+                                <td>6 - 10 años</td>
+                            </tr>
+                            <tr>
+                                <td>Miércoles</td>
+                                <td>14:00 - 17:00</td>
+                                <td>11 - 15 años</td>
+                            </tr>
+                            <tr>
+                                <td>Viernes</td>
+                                <td>17:00 - 20:00</td>
+                                <td>16 - 18 años</td>
+                            </tr>
+                            <tr>
+                                <td>Sábado</td>
+                                <td>10:00 - 13:00</td>
+                                <td>Todos los grupos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <!-- Tabla de horarios -->
-            <div class="tabla-horarios">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Horario</th>
-                            <th>Grupo de edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Lunes</td>
-                            <td>09:00 - 12:00</td>
-                            <td>6 - 10 años</td>
-                        </tr>
-                        <tr>
-                            <td>Miércoles</td>
-                            <td>14:00 - 17:00</td>
-                            <td>11 - 15 años</td>
-                        </tr>
-                        <tr>
-                            <td>Viernes</td>
-                            <td>17:00 - 20:00</td>
-                            <td>16 - 18 años</td>
-                        </tr>
-                        <tr>
-                            <td>Sábado</td>
-                            <td>10:00 - 13:00</td>
-                            <td>Todos los grupos</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <!-- Formulario de matrícula -->
+                <div class="formulario-matricula">
+                    <h3>Formulario de matrícula</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad del interesado</label>
+                            <input type="number" class="form-control" id="edad" name="edad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento">Dictamen Médico</label>
+                            <input type="file" class="form-control-file" id="documento" name="documento" accept=".pdf">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </article>
 
-<!-- Formulario de matrícula -->
-<div class="formulario-matricula">
-    <h3>Formulario de matrícula</h3>
-    <form>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" required>
-        </div>
-        <div class="form-group">
-            <label for="edad">Edad del interesado</label>
-            <input type="number" class="form-control" id="edad" name="edad" required>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" required>
-        </div>
-        <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo" name="correo" required>
-        </div>
-        <div class="form-group">
-            <label for="documento">Dictamen Medico</label>
-            <input type="file" class="form-control-file" id="documento" name="documento" accept=".pdf">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-</div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer_top">
-                            <ul class="location_icon">
-                                <li> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <ul class="social_icon">
-                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer_top">
+                                <ul class="location_icon">
+                                    <li> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                                    <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                                    <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                </ul>
+                                <ul class="social_icon">
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer_bottom">
+                                <p>© 2024 Todos los derechos reservados. Design by <a href="https://html.design/">Free HTML Templates</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <p>© 2024 Todos los derechos reservados.</p>
-                    </div>
                 </div>
-            </div>
-        </footer>
-
-        <!-- end footer -->
+            </footer>
+        </div>
     </div>
 
-    <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
