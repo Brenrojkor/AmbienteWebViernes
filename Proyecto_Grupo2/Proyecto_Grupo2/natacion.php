@@ -1,6 +1,18 @@
 <?php
 include 'header.php'; // Incluir el encabezado de la página
-#include 'horario_func.php'; // Incluir la función para mostrar horarios de fútbol
+include 'send_email.php'; // Incluir el archivo que contiene la función para enviar emails
+
+// Verifica si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Valida y envía el formulario usando la función
+    $resultado = enviarFormulario($_POST, $_FILES);
+
+    if ($resultado) {
+        echo '<div class="alert alert-success" role="alert">Formulario enviado con éxito.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Hubo un problema al enviar el formulario.</div>';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -177,10 +189,10 @@ include 'header.php'; // Incluir el encabezado de la página
                     </table>
                 </div>
 
-                <!-- Formulario de matrícula -->
-                <div class="formulario-matricula">
+                 <!-- Formulario de matrícula -->
+                 <div class="formulario-matricula">
                     <h3>Formulario de matrícula</h3>
-                    <form>
+                    <form method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -188,6 +200,10 @@ include 'header.php'; // Incluir el encabezado de la página
                         <div class="form-group">
                             <label for="apellido">Apellido</label>
                             <input type="text" class="form-control" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deporte">Deporte Interesado</label>
+                            <input type="text" class="form-control" id="deporte" name="deporte" required>
                         </div>
                         <div class="form-group">
                             <label for="edad">Edad del interesado</label>
@@ -208,7 +224,7 @@ include 'header.php'; // Incluir el encabezado de la página
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
-
+            </article>
                 <!-- Footer -->
                 <footer>
                     <div class="container">

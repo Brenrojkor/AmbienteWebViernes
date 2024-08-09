@@ -1,6 +1,18 @@
 <?php
 include 'header.php'; // Incluir el encabezado de la página
-#include 'horario_func.php'; // Incluir la función para mostrar horarios de fútbol
+include 'send_email.php'; // Incluir el archivo que contiene la función para enviar emails
+
+// Verifica si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Valida y envía el formulario usando la función
+    $resultado = enviarFormulario($_POST, $_FILES);
+
+    if ($resultado) {
+        echo '<div class="alert alert-success" role="alert">Formulario enviado con éxito.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Hubo un problema al enviar el formulario.</div>';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -183,37 +195,42 @@ include 'header.php'; // Incluir el encabezado de la página
                 </table>
             </div>
 
-<!-- Formulario de matrícula -->
-<div class="formulario-matricula">
-    <h3>Formulario de matrícula</h3>
-    <form>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" required>
-        </div>
-        <div class="form-group">
-            <label for="edad">Edad del interesado</label>
-            <input type="number" class="form-control" id="edad" name="edad" required>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" required>
-        </div>
-        <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo" name="correo" required>
-        </div>
-        <div class="form-group">
-            <label for="documento">Dictamen Medico</label>
-            <input type="file" class="form-control-file" id="documento" name="documento" accept=".pdf">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-</div>
+              <!-- Formulario de matrícula -->
+              <div class="formulario-matricula">
+                    <h3>Formulario de matrícula</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deporte">Deporte Interesado</label>
+                            <input type="text" class="form-control" id="deporte" name="deporte" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad del interesado</label>
+                            <input type="number" class="form-control" id="edad" name="edad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento">Dictamen Médico</label>
+                            <input type="file" class="form-control-file" id="documento" name="documento" accept=".pdf">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </article>
 
         <!-- Footer -->
         <footer>
