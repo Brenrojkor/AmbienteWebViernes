@@ -158,7 +158,6 @@
         generateCalendar(currentMonth, currentYear);
     });
 </script>
-
 </body>
 
 </html>
