@@ -204,6 +204,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" class="form-control" id="apellido" name="apellido" required>
                         </div>
                         <div class="form-group">
+                            <label for="deporte">Deporte Interesado</label>
+                            <input type="text" class="form-control" id="deporte" name="deporte" required>
+                        </div>
+                        <div class="form-group">
                             <label for="edad">Edad del interesado</label>
                             <input type="number" class="form-control" id="edad" name="edad" required>
                         </div>

@@ -1,5 +1,5 @@
 <?php
-// Incluye los archivos necesarios de PHPMailer
+// Archivos requeridos PHPMAILER
 require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
@@ -10,6 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 function enviarFormulario($data, $files) {
     $nombre = $data['nombre'];
     $apellido = $data['apellido'];
+    $deporte = $data['deporte'];
     $edad = $data['edad'];
     $telefono = $data['telefono'];
     $correo = $data['correo'];
@@ -22,16 +23,16 @@ function enviarFormulario($data, $files) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'tu_correo@gmail.com'; // Reemplaza con tu correo Gmail
-        $mail->Password = 'tu_contraseña'; // Reemplaza con tu contraseña o App Password de Gmail
+        $mail->Username = 'polideportivosantodomingo3@gmail.com'; 
+        $mail->Password = 'fjct nqvz bmwf kuje'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Remitente
-        $mail->setFrom('tu_correo@gmail.com', 'Academia Basketball');
+        $mail->setFrom('polideportivosantodomingo3@gmail.com', 'Polideportivo Santo Domingo');
         
         // Destinatario
-        $mail->addAddress('academia@ejemplo.com', 'Academia Basketball');
+        $mail->addAddress('polideportivosantodomingo3@gmail.com', 'Polideportivo Santo Domingo');
 
         // Archivo adjunto (si existe)
         if (!empty($files['documento']['name'])) {
@@ -50,6 +51,7 @@ function enviarFormulario($data, $files) {
                 <h2>Detalles de la solicitud</h2>
                 <p><strong>Nombre:</strong> $nombre</p>
                 <p><strong>Apellido:</strong> $apellido</p>
+                <p><strong>Deporte de Interés:</strong> $deporte</p>
                 <p><strong>Edad:</strong> $edad</p>
                 <p><strong>Teléfono:</strong> $telefono</p>
                 <p><strong>Correo electrónico:</strong> $correo</p>
@@ -57,7 +59,7 @@ function enviarFormulario($data, $files) {
             </html>
         ";
 
-        // Enviar correo
+        // se envia el correo 
         $mail->send();
         return true;
     } catch (Exception $e) {
