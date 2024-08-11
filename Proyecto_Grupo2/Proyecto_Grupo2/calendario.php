@@ -87,68 +87,85 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const monthNameEl = document.getElementById('month-name');
-            const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
-            const prevBtn = document.getElementById('prev');
-            const nextBtn = document.getElementById('next');
+    document.addEventListener('DOMContentLoaded', () => {
+        const monthNameEl = document.getElementById('month-name');
+        const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
 
-            let currentMonth = new Date().getMonth();
-            let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
 
-            function generateCalendar(month, year) {
-                const firstDay = new Date(year, month).getDay();
-                const daysInMonth = 32 - new Date(year, month, 32).getDate();
+        function generateCalendar(month, year) {
+            const firstDay = new Date(year, month).getDay();
+            const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-                calendarBodyEl.innerHTML = '';
-                monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
-                    month: 'long',
-                    year: 'numeric'
-                });
+            calendarBodyEl.innerHTML = '';
+            monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
+                month: 'long',
+                year: 'numeric'
+            });
 
-                let date = 1;
-                for (let i = 0; i < 6; i++) {
-                    const row = document.createElement('tr');
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
 
-                    for (let j = 0; j < 7; j++) {
-                        if (i === 0 && j < firstDay) {
-                            const cell = document.createElement('td');
-                            row.appendChild(cell);
-                        } else if (date > daysInMonth) {
-                            break;
-                        } else {
-                            const cell = document.createElement('td');
-                            cell.textContent = date;
-                            row.appendChild(cell);
-                            date++;
+                for (let j = 0; j < 7; j++) {
+                    if (i === 0 && j < firstDay) {
+                        const cell = document.createElement('td');
+                        row.appendChild(cell);
+                    } else if (date > daysInMonth) {
+                        break;
+                    } else {
+                        const cell = document.createElement('td');
+                        cell.textContent = date;
+
+                        // Verificar si es el día 2 en la columna de jueves
+                        if (date === 1 && j === 4) {
+                            cell.addEventListener('click', () => {
+                                const targetURL = `EventoFutbol.php`;
+                                window.location.href = targetURL; // Redirige en la misma pestaña
+                            });
                         }
+
+                        // Verificar si es el día 2 en la columna de jueves
+                        if (date === 8 && s === 0) {
+                            cell.addEventListener('click', () => {
+                                const targetURL = `EventoBaskeball.php`;
+                                window.location.href = targetURL; // Redirige en la misma pestaña
+                            });
+                        }
+
+                        row.appendChild(cell);
+                        date++;
                     }
-
-                    calendarBodyEl.appendChild(row);
                 }
+
+                calendarBodyEl.appendChild(row);
             }
+        }
 
-            prevBtn.addEventListener('click', () => {
-                currentMonth--;
-                if (currentMonth < 0) {
-                    currentMonth = 11;
-                    currentYear--;
-                }
-                generateCalendar(currentMonth, currentYear);
-            });
-
-            nextBtn.addEventListener('click', () => {
-                currentMonth++;
-                if (currentMonth > 11) {
-                    currentMonth = 0;
-                    currentYear++;
-                }
-                generateCalendar(currentMonth, currentYear);
-            });
-
+        prevBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
             generateCalendar(currentMonth, currentYear);
         });
-    </script>
+
+        nextBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        });
+
+        generateCalendar(currentMonth, currentYear);
+    });
+</script>
 </body>
 
 </html>
