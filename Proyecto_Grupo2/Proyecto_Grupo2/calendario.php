@@ -128,14 +128,6 @@
                             });
                         }
 
-                        // Verificar si es el día 2 en la columna de jueves
-                        if (date === 8 && s === 0) {
-                            cell.addEventListener('click', () => {
-                                const targetURL = `EventoBaskeball.php`;
-                                window.location.href = targetURL; // Redirige en la misma pestaña
-                            });
-                        }
-
                         row.appendChild(cell);
                         date++;
                     }
