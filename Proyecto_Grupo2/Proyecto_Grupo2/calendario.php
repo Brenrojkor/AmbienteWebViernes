@@ -120,21 +120,23 @@
                         const cell = document.createElement('td');
                         cell.textContent = date;
 
-                        // Verificar si es el día 2 en la columna de jueves
+                        
                         if (date === 1 && j === 4) {
+                            cell.classList.add('event-day');
+                            cell.style.cursor = 'pointer';
                             cell.addEventListener('click', () => {
-                                const targetURL = `EventoFutbol.php`;
-                                window.location.href = targetURL; // Redirige en la misma pestaña
+                                const targetURL = 'EventoFutbol.php';
+                                window.location.href = targetURL; 
                             });
                         }
 
                         row.appendChild(cell);
                         date++;
-                    }
-                }
+                    } 
+    }
 
-                calendarBodyEl.appendChild(row);
-            }
+    calendarBodyEl.appendChild(row);
+}
         }
 
         prevBtn.addEventListener('click', () => {
