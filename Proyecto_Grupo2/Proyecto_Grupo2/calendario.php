@@ -128,6 +128,20 @@
                             });
                         }
 
+                        if (date === 12 && j === 1) {
+                            cell.addEventListener('click', () => {
+                                const targetURL = `EventoBasketball.php`;
+                                window.location.href = targetURL; // Redirige en la misma pestaña
+                            });
+                        }
+
+                        if (date === 31 && j === 6) {
+                            cell.addEventListener('click', () => {
+                                const targetURL = `EventoNatacion.php`;
+                                window.location.href = targetURL; // Redirige en la misma pestaña
+                            });
+                        }
+
                         row.appendChild(cell);
                         date++;
                     }
