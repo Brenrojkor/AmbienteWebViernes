@@ -1,13 +1,14 @@
 <?php
 include("db.php");
 
+/* 
 // Verificar si el usuario está autenticado y si es administrador
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     // Redirigir al usuario a una página de acceso denegado
     header('Location: access_denied.php');
     exit();
 }
-
+*/
 // Incluir archivos necesarios
 
 include('includes/header_crud.php');

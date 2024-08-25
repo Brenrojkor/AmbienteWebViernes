@@ -48,103 +48,72 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
 
+<div id="dismiss">
+    <i class="fa fa-arrow-left"></i>
+</div>
 
-                                        
+<ul class="list-unstyled components">
+
+    <li class="active">
+        <a href="index.html">Home</a>
+    </li>
     
-
-
-
-        <div id="dismiss">
-            <i class="fa fa-arrow-left"></i>
-        </div>
-
-        <ul class="list-unstyled components">
-
-            <li class="active">
-                <a href="index.html">Home</a>
-            </li>
-            
-            <li>
-                <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
-                <ul class="collapse list-unstyled" id="matriculaSubmenu">
-                    <li>
-                        <a href="yoga.php">Yoga</a>
-                    </li>
-                    <li>
-                        <a href="natacion.php">Natación</a>
-                    </li>
-                    <li>
-                        <a href="futbol.php">Futbol</a>
-                    </li>
-                    <li>
-                        <a href="pingpong.php">Ping Pong</a>
-                    </li>
-                    <li>
-                        <a href="tenis.php">Tenis</a>
-                    </li>
-                    <li>
-                        <a href="basketball.php">Basketball</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#noticias">Noticias</a>
-            </li>
-            <li>
-                <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
-                <ul class="collapse list-unstyled" id="eventosSubmenu">
-                    <li>
-                        <a href="calendario.php">Calendario</a>
-                    </li>
-                    <li>
-                        <a href="#actividades">Actividades</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
-                <ul class="collapse list-unstyled" id="contactoSubmenu">
-                    <li>
-                        <a href="#soporte">Soporte</a>
-                    </li>
-                    <li>
-                        <a href="faq.php">Preguntas frecuentes</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#credencialesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Login</a>
-                <ul class="collapse list-unstyled" id="credencialesSubmenu">
-                    <li>
-                        <a href="login.php">Login</a>
-                    </li>
-                    <li>
-                        <a href="registro.php">Register</a>
-                    </li>
-                    <li>
-                        <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin</a>
-                <ul class="collapse list-unstyled" id="AdminSubmenu">
-                    <li>
-                        <a href="crud_1/crud.php">Empleados</a>
-                    </li>
-    
-                </ul>
-            </li>
-
-
-
-
-
+    <li>
+        <a href="#matriculaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>
+        <ul class="collapse list-unstyled" id="matriculaSubmenu">
+            <li><a href="yoga.php">Yoga</a></li>
+            <li><a href="natacion.php">Natación</a></li>
+            <li><a href="futbol.php">Futbol</a></li>
+            <li><a href="pingpong.php">Ping Pong</a></li>
+            <li><a href="tenis.php">Tenis</a></li>
+            <li><a href="basketball.php">Basketball</a></li>
         </ul>
+    </li>
 
-    </nav>
+    <li>
+        <a href="#noticias">Noticias</a>
+    </li>
+
+    <li>
+        <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
+        <ul class="collapse list-unstyled" id="eventosSubmenu">
+            <li><a href="calendario.php">Calendario</a></li>
+            <li><a href="#actividades">Actividades</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
+        <ul class="collapse list-unstyled" id="contactoSubmenu">
+            <li><a href="#soporte">Soporte</a></li>
+            <li><a href="faq.php">Preguntas frecuentes</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#credencialesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Login</a>
+        <ul class="collapse list-unstyled" id="credencialesSubmenu">
+            <li><a href="login.php">Login</a></li>
+            <li><a href="registro.php">Register</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </li>
+
+    <?php if ($rol == 'admin') { ?>
+        <li>
+            <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin</a>
+            <ul class="collapse list-unstyled" id="AdminSubmenu">
+                <li><a href="crud_1/crud.php">Empleados</a></li>
+                <li><a href="crud_1/crud_horarios_front.php">Horarios</a></li>
+                <li><a href="crud_1/crud_instalacion_front.php">Instalaciones</a></li>
+                <li><a href="crud_1/crud_actividades_front.php">Actividades</a></li>
+            </ul>
+        </li>
+    <?php } ?>
+
+</ul>
+
+</nav>
 </div>
 
 
