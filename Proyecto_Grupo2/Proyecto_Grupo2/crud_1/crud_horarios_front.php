@@ -11,8 +11,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+      <a href="../" class="btn btn-secondary">Volver</a>
+      </div>
+    </nav>
+
+
+
     <div class="container mt-4">
-        <h1 class="mb-4">CRUD Horarios</h1>
+        <h1 class="mb-4">Horarios</h1>
 
         <!-- Formulario -->
         <form id="horario-form" class="mb-4">
@@ -164,5 +173,10 @@
             }
         });
     </script>
+
+
+
+
+
 </body>
 </html>

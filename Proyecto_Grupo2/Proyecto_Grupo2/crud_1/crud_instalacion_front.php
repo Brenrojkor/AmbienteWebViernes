@@ -11,8 +11,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+      <a href="../" class="btn btn-secondary">Volver</a>
+      </div>
+    </nav>
+
+
+
+
     <div class="container mt-4">
-        <h1 class="mb-4">CRUD Instalaciones</h1>
+        <h1 class="mb-4">Instalaciones</h1>
 
         <!-- Formulario -->
         <form id="instalacion-form" class="mb-4">
@@ -126,5 +136,11 @@
             }
         });
     </script>
+
+
+
+
+
+
 </body>
 </html>
