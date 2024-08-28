@@ -97,47 +97,56 @@
         let currentYear = new Date().getFullYear();
 
         function generateCalendar(month, year) {
-            const firstDay = new Date(year, month).getDay();
-            const daysInMonth = 32 - new Date(year, month, 32).getDate();
+    const firstDay = new Date(year, month).getDay();
+    const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-            calendarBodyEl.innerHTML = '';
-            monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
-                month: 'long',
-                year: 'numeric'
-            });
+    calendarBodyEl.innerHTML = '';
+    monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
+        month: 'long',
+        year: 'numeric'
+    });
 
-            let date = 1;
-            for (let i = 0; i < 6; i++) {
-                const row = document.createElement('tr');
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+        const row = document.createElement('tr');
 
-                for (let j = 0; j < 7; j++) {
-                    if (i === 0 && j < firstDay) {
-                        const cell = document.createElement('td');
-                        row.appendChild(cell);
-                    } else if (date > daysInMonth) {
-                        break;
-                    } else {
-                        const cell = document.createElement('td');
-                        cell.textContent = date;
+        for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+                const cell = document.createElement('td');
+                row.appendChild(cell);
+            } else if (date > daysInMonth) {
+                break;
+            } else {
+                const cell = document.createElement('td');
+                cell.textContent = date;
 
-                        
-                        if (date === 1 && j === 4) {
-                            cell.classList.add('event-day');
-                            cell.style.cursor = 'pointer';
-                            cell.addEventListener('click', () => {
-                                const targetURL = 'EventoFutbol.php';
-                                window.location.href = targetURL; 
-                            });
-                        }
+               
+                if (date === 1 && j === 4) {
+                    cell.classList.add('event-day');
+                    cell.style.cursor = 'pointer';
+                    cell.addEventListener('click', () => {
+                        const targetURL = 'EventoFutbol.php';
+                        window.location.href = targetURL; 
+                    });
+                }
 
-                        row.appendChild(cell);
-                        date++;
-                    } 
-    }
+                
+                if (date === 24 && j === 6) {
+                    cell.classList.add('event-day');
+                    cell.style.cursor = 'pointer';
+                    cell.addEventListener('click', () => {
+                        const targetURL = 'EventoBox.php';
+                        window.location.href = targetURL;
+                    });
+                }
 
-    calendarBodyEl.appendChild(row);
-}
+                row.appendChild(cell);
+                date++;
+            }
         }
+        calendarBodyEl.appendChild(row);
+    }
+}
 
         prevBtn.addEventListener('click', () => {
             currentMonth--;
