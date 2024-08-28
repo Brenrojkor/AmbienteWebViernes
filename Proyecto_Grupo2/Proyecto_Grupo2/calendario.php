@@ -2,9 +2,9 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Frecuentes</title>
+    <title>Calendario</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- FAQ CSS -->
@@ -65,21 +65,13 @@
                             <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
                             <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                         </ul>
-                        <ul class="social_icon">
-                            <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <p>© 2024 Todos los derechos reservados.</p>
-                </div>
             </div>
-        <div class="col-lg-12">
-            <p>© 2024 Todos los derechos reservados.</p>
-        </div>
+            <div class="col-lg-12">
+                <p>© 2024 Todos los derechos reservados.</p>
+            </div>
         </div>
 
         </div>
@@ -92,45 +84,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const monthNameEl = document.getElementById('month-name');
-        const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
+        document.addEventListener('DOMContentLoaded', () => {
+            const monthNameEl = document.getElementById('month-name');
+            const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
 
-        let currentMonth = new Date().getMonth();
-        let currentYear = new Date().getFullYear();
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
 
-        function generateCalendar(month, year) {
-            const firstDay = new Date(year, month).getDay();
-            const daysInMonth = 32 - new Date(year, month, 32).getDate();
+            function generateCalendar(month, year) {
+                const firstDay = new Date(year, month).getDay();
+                const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-            calendarBodyEl.innerHTML = '';
-            monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
-                month: 'long',
-                year: 'numeric'
-            });
+                calendarBodyEl.innerHTML = '';
+                monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
+                    month: 'long',
+                    year: 'numeric'
+                });
 
-            let date = 1;
-            for (let i = 0; i < 6; i++) {
-                const row = document.createElement('tr');
+                let date = 1;
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
 
-                for (let j = 0; j < 7; j++) {
-                    if (i === 0 && j < firstDay) {
-                        const cell = document.createElement('td');
-                        row.appendChild(cell);
-                    } else if (date > daysInMonth) {
-                        break;
-                    } else {
-                        const cell = document.createElement('td');
-                        cell.textContent = date;
-
-                        // Verificar si es el día 2 en la columna de jueves
-                        if (date === 1 && j === 4) {
-                            cell.addEventListener('click', () => {
-                                const targetURL = `EventoFutbol.php`;
-                                window.location.href = targetURL; // Redirige en la misma pestaña
-                            });
                     for (let j = 0; j < 7; j++) {
                         if (i === 0 && j < firstDay) {
                             const cell = document.createElement('td');
@@ -141,7 +117,7 @@
                             const cell = document.createElement('td');
                             cell.textContent = date;
 
-
+                            // Verificaciones de fechas específicas y sus eventos
                             if (date === 1 && j === 4) {
                                 cell.classList.add('event-day');
                                 cell.style.cursor = 'pointer';
@@ -150,7 +126,6 @@
                                     window.location.href = targetURL;
                                 });
                             }
-
 
                             if (date === 24 && j === 6) {
                                 cell.classList.add('event-day');
@@ -161,55 +136,55 @@
                                 });
                             }
 
+                            if (date === 12 && j === 1) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoBasketball.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
+                            if (date === 31 && j === 6) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoNatacion.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
                             row.appendChild(cell);
                             date++;
                         }
-
-                        if (date === 12 && j === 1) {
-                            cell.addEventListener('click', () => {
-                                const targetURL = `EventoBasketball.php`;
-                                window.location.href = targetURL; // Redirige en la misma pestaña
-                            });
-                        }
-
-                        if (date === 31 && j === 6) {
-                            cell.addEventListener('click', () => {
-                                const targetURL = `EventoNatacion.php`;
-                                window.location.href = targetURL; // Redirige en la misma pestaña
-                            });
-                        }
-
-                        row.appendChild(cell);
-                        date++;
                     }
+
                     calendarBodyEl.appendChild(row);
                 }
-
-                calendarBodyEl.appendChild(row);
             }
-        }
 
-        prevBtn.addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
+            prevBtn.addEventListener('click', () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                generateCalendar(currentMonth, currentYear);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                generateCalendar(currentMonth, currentYear);
+            });
+
             generateCalendar(currentMonth, currentYear);
         });
+    </script>
 
-        nextBtn.addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            generateCalendar(currentMonth, currentYear);
-        });
-
-        generateCalendar(currentMonth, currentYear);
-    });
-</script>
 </body>
 
 </html>

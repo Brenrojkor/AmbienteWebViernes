@@ -1,9 +1,26 @@
+<?php
+include 'header.php'; // Incluir el encabezado de la página
+include 'send_email.php'; // Incluir el archivo que contiene la función para enviar emails
+
+// Verifica si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Valida y envía el formulario usando la función
+    $resultado = enviarFormulario($_POST, $_FILES);
+
+    if ($resultado) {
+        echo '<div class="alert alert-success" role="alert">Formulario enviado con éxito.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Hubo un problema al enviar el formulario.</div>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- basic -->
-    <meta charset="utf-8">
+        <!-- basic -->
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,14 +37,13 @@
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
     <!--style tema -->
-    <link rel=" stylesheet"  href="css/style_futbol.css">
+    <link rel=" stylesheet"  href="css/style_basketball.css">
+
     <!-- responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
         @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
