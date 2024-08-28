@@ -105,7 +105,7 @@
                 <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
                 <ul class="collapse list-unstyled" id="contactoSubmenu">
                     <li>
-                        <a href="#soporte">Soporte</a>
+                        <a href="soporte.php">Soporte</a>
                     </li>
                     <li>
                         <a href="faq.php">Preguntas frecuentes</a>
