@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Frecuentes</title>
+    <title>Calendario</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- FAQ CSS -->
@@ -56,23 +56,6 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer_top">
-                        <ul class="location_icon">
-                            <li> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <ul class="social_icon">
-                            <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="col-lg-12">
                     <p>© 2024 Todos los derechos reservados.</p>
                 </div>
@@ -86,7 +69,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script>
+    <script> 
     document.addEventListener('DOMContentLoaded', () => {
         const monthNameEl = document.getElementById('month-name');
         const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
