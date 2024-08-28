@@ -88,7 +88,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#noticias">Noticias</a>
+                <a href="crud_noticias/News.php">Noticias</a>
             </li>
             <li>
                 <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
