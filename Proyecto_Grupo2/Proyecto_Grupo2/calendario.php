@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario</title>
     <!-- Bootstrap CSS -->
@@ -56,10 +56,10 @@
 
     <!-- Footer -->
     <footer>
-                <div class="col-lg-12">
-                    <p>© 2024 Todos los derechos reservados.</p>
-                </div>
-            </div>
+        <div class="col-lg-12">
+            <p>© 2024 Todos los derechos reservados.</p>
+        </div>
+        </div>
         </div>
     </footer>
 
@@ -69,89 +69,89 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script> 
-    document.addEventListener('DOMContentLoaded', () => {
-        const monthNameEl = document.getElementById('month-name');
-        const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const monthNameEl = document.getElementById('month-name');
+            const calendarBodyEl = document.getElementById('calendar-body').getElementsByTagName('tbody')[0];
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
 
-        let currentMonth = new Date().getMonth();
-        let currentYear = new Date().getFullYear();
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
 
-        function generateCalendar(month, year) {
-    const firstDay = new Date(year, month).getDay();
-    const daysInMonth = 32 - new Date(year, month, 32).getDate();
+            function generateCalendar(month, year) {
+                const firstDay = new Date(year, month).getDay();
+                const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-    calendarBodyEl.innerHTML = '';
-    monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
-        month: 'long',
-        year: 'numeric'
-    });
+                calendarBodyEl.innerHTML = '';
+                monthNameEl.textContent = new Date(year, month).toLocaleString('es-ES', {
+                    month: 'long',
+                    year: 'numeric'
+                });
 
-    let date = 1;
-    for (let i = 0; i < 6; i++) {
-        const row = document.createElement('tr');
+                let date = 1;
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
 
-        for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay) {
-                const cell = document.createElement('td');
-                row.appendChild(cell);
-            } else if (date > daysInMonth) {
-                break;
-            } else {
-                const cell = document.createElement('td');
-                cell.textContent = date;
+                    for (let j = 0; j < 7; j++) {
+                        if (i === 0 && j < firstDay) {
+                            const cell = document.createElement('td');
+                            row.appendChild(cell);
+                        } else if (date > daysInMonth) {
+                            break;
+                        } else {
+                            const cell = document.createElement('td');
+                            cell.textContent = date;
 
-               
-                if (date === 1 && j === 4) {
-                    cell.classList.add('event-day');
-                    cell.style.cursor = 'pointer';
-                    cell.addEventListener('click', () => {
-                        const targetURL = 'EventoFutbol.php';
-                        window.location.href = targetURL; 
-                    });
+
+                            if (date === 1 && j === 4) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoFutbol.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
+
+                            if (date === 24 && j === 6) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoBox.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
+                            row.appendChild(cell);
+                            date++;
+                        }
+                    }
+                    calendarBodyEl.appendChild(row);
                 }
+            }
 
-                
-                if (date === 24 && j === 6) {
-                    cell.classList.add('event-day');
-                    cell.style.cursor = 'pointer';
-                    cell.addEventListener('click', () => {
-                        const targetURL = 'EventoBox.php';
-                        window.location.href = targetURL;
-                    });
+            prevBtn.addEventListener('click', () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
                 }
+                generateCalendar(currentMonth, currentYear);
+            });
 
-                row.appendChild(cell);
-                date++;
-            }
-        }
-        calendarBodyEl.appendChild(row);
-    }
-}
+            nextBtn.addEventListener('click', () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                generateCalendar(currentMonth, currentYear);
+            });
 
-        prevBtn.addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
             generateCalendar(currentMonth, currentYear);
         });
-
-        nextBtn.addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            generateCalendar(currentMonth, currentYear);
-        });
-
-        generateCalendar(currentMonth, currentYear);
-    });
-</script>
+    </script>
 </body>
 
 </html>
