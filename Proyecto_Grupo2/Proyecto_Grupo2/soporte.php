@@ -26,7 +26,7 @@
     </nav>
 
     <div class="container">
-        <h1 class="faq-title">Soporte</h1>
+        <h1 class="support-title">Soporte</h1>
         <div class="accordion" id="supportAccordion">
             <div class="card">
                 <div class="card-header" id="headingOne">
