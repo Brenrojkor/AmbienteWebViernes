@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>EventoFutbol</title>
+    <title>EventoBox</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main_text">
-                                <?php echo '<h1>Partido <br><strong class="bold_text">De</strong><br><strong class="bold_text_black">Futbol</strong></h1>'; ?>
+                                <?php echo '<h1>Torneo <br><strong class="bold_text">De</strong><br><strong class="bold_text_black">Boxeo</strong></h1>'; ?>
                             </div>
                         </div>
                     </div>
@@ -88,25 +88,25 @@
             </div>
 
             <!-- article -->
-            <article class="eventoFutbol">
+            <article class="eventoBox">
                 <!-- Carrusel de fotos de la academia -->
-                <div id="eventoFutbolCarousel" class="carousel slide" data-ride="carousel">
+                <div id="eventoBoxCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="images/eventoFutbol1.jpeg" alt="Primera foto">
+                            <img class="d-block w-100" src="images/eventoBox1.jpeg" alt="Primera foto">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="images/eventoFutbol2.jpeg" alt="Segunda foto">
+                            <img class="d-block w-100" src="images/eventoBox2.jpeg" alt="Segunda foto">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="images/eventoFutbol3.jpeg" alt="Tercera foto">
+                            <img class="d-block w-100" src="images/eventoBox3.jpeg" alt="Tercera foto">
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#eventoFutbolCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#eventoBoxCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Anterior</span>
                     </a>
-                    <a class="carousel-control-next" href="#eventoFutbolCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#eventoBoxCarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Siguiente</span>
                     </a>
@@ -115,7 +115,7 @@
                 <!-- Resumen de la academia -->
                 <div class="resumen-academia">
                     <p>
-                        La academia de Futbol de Santo Domingo da informe a su partido de Futbol con el equipo de Futbol de la escuela de Santo Domingo.
+                        Hoy el Polideportivo de Santo Domingo Ofrece un torneo de Box para salir de la rutina y para el disfrute de los apasionados del boxeo. <br>¡Los esperamos!
                     </p>
                     <p>
                         Se ofreceran refrigerios y se pedirá una donación simbólica para seguir financiando las actividades y restructurando nuestras instalaciones.
@@ -136,9 +136,9 @@
                         <tbody>
                             <tr>
                                 <td>Agosto</td>
-                                <td>1/8/2024</td>
-                                <td>Jueves</td>
-                                <td>08:00am - 10:00am</td>
+                                <td>24/8/2024</td>
+                                <td>Sábado</td>
+                                <td>07:00pm - 9:00pm</td>
                             </tr>
                         </tbody>
                     </table>
