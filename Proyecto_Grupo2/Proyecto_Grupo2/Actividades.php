@@ -12,7 +12,7 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="css/style.css">
      <!--style tema -->
-    <link rel=" stylesheet" href="css/style_natacion.css">
+    <link rel=" stylesheet" href="css/style_Actividades.css">
     <!-- responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Fonts -->
@@ -33,7 +33,7 @@
         <h1 class="faq-title">Actvidades</h1>
 
         <!-- Resumen de la academia -->
-        <div class="resumen-academia">
+        <div class="resumen-actividades">
             <p>
                 El Polideportivo Santo Domingo, quiere que usted como usuario pueda apreciar los tipos de actividades que aqui son recurrentes.
             </p>
@@ -59,14 +59,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td> <!-- Ejemplo de ID de actividad -->
-                        <td>Zumba</td> <!-- Nombre de la actividad -->
-                        <td>Clase de zumba para todas las edades</td> <!-- Descripción -->
-                        <td>Ana López</td> <!-- Instructor -->
-                        <td>10:00am - 11:00am</td> <!-- Horario -->
-                        <td>30</td> <!-- Capacidad -->
-                        <td>Gimnasio Principal</td> <!-- Instalación -->
-                        <td>500</td> <!-- Precio -->
+                        <td>1</td> 
+                        <td>Zumba</td> 
+                        <td>Clase de zumba para todas las edades</td> 
+                        <td>Ana López</td> 
+                        <td>10:00am - 11:00am</td> 
+                        <td>30</td> 
+                        <td>Gimnasio Principal</td> 
+                        <td>500</td> 
                     </tr>
                     <tr>
                 <td>2</td>
@@ -140,13 +140,6 @@
         </div>
         </div>
     </footer>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-
 </body>
 
 </html>
