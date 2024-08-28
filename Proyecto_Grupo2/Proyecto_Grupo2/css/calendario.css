@@ -83,3 +83,9 @@ ul.social_icon li a:hover {
 thead th {
     background-color: #f0f0f0;
 }
+
+.event-day {
+    position: relative;
+    cursor: pointer; 
+}
+

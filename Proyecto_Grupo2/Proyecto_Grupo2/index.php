@@ -97,7 +97,7 @@
                         <a href="calendario.php">Calendario</a>
                     </li>
                     <li>
-                        <a href="#actividades">Actividades</a>
+                        <a href="Actividades.php">Actividades</a>
                     </li>
                 </ul>
             </li>

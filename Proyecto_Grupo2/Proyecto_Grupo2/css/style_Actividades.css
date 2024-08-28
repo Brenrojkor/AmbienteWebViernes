@@ -1,0 +1,96 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0; /* Añade esto si no está ya en style.css */
+}
+
+.futbol {
+    padding: 20px;
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+}
+
+/* Ajustes específicos para asegurar que no haya margen superior en el artículo */
+#content {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+header {
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+}
+
+.carousel-inner img {
+    height: 800px;
+    object-fit: cover;
+}
+
+.resumen-actividades p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tabla-horarios {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tabla-horarios .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.tabla-actividades .table th,
+.tabla-actividades .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.tabla-actividades .table th {
+    background-color: #ff6600;
+    color: #fff;
+    border-color: #ff6600;
+}
+
+.tabla-actividades .table td {
+    border-color: #ff6600;
+}
+
+/* General Styles for Sidebar and Footer */
+.sidebar {
+    background-color: #ff6600;
+}
+
+.sidebar .components li a {
+    color: #fff;
+}
+
+.sidebar .components li a:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .footer_top ul.location_icon li a,
+footer .footer_top ul.social_icon li a {
+    color: #fff;
+}
+
+footer .footer_top ul.location_icon li a:hover,
+footer .footer_top ul.social_icon li a:hover {
+    color: #333;
+}

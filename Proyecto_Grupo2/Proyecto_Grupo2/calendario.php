@@ -77,6 +77,11 @@
                     <p>© 2024 Todos los derechos reservados.</p>
                 </div>
             </div>
+        <div class="col-lg-12">
+            <p>© 2024 Todos los derechos reservados.</p>
+        </div>
+        </div>
+
         </div>
     </footer>
 
@@ -126,6 +131,38 @@
                                 const targetURL = `EventoFutbol.php`;
                                 window.location.href = targetURL; // Redirige en la misma pestaña
                             });
+                    for (let j = 0; j < 7; j++) {
+                        if (i === 0 && j < firstDay) {
+                            const cell = document.createElement('td');
+                            row.appendChild(cell);
+                        } else if (date > daysInMonth) {
+                            break;
+                        } else {
+                            const cell = document.createElement('td');
+                            cell.textContent = date;
+
+
+                            if (date === 1 && j === 4) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoFutbol.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
+
+                            if (date === 24 && j === 6) {
+                                cell.classList.add('event-day');
+                                cell.style.cursor = 'pointer';
+                                cell.addEventListener('click', () => {
+                                    const targetURL = 'EventoBox.php';
+                                    window.location.href = targetURL;
+                                });
+                            }
+
+                            row.appendChild(cell);
+                            date++;
                         }
 
                         if (date === 12 && j === 1) {
@@ -145,6 +182,7 @@
                         row.appendChild(cell);
                         date++;
                     }
+                    calendarBodyEl.appendChild(row);
                 }
 
                 calendarBodyEl.appendChild(row);
