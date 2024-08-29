@@ -1,12 +1,6 @@
 <?php
 include "db.php";
 
-// Verificar si el usuario está autenticado y si es administrador
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-    // Redirigir al usuario a una página de acceso denegado
-    header('Location: access_denied.php');
-    exit();
-}
 
 include('includes/header_crud.php');
 ?>
@@ -53,9 +47,13 @@ include('includes/header_crud.php');
             <?php unset($_SESSION['message'], $_SESSION['message_type']); } ?>
 
             <!-- Botón para abrir la ventana modal -->
+           
+                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
             <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#nuevaNoticiaModal">
                 Nueva
             </button>
+        <?php } ?>
+
 
             <div class="row">
                 <?php
@@ -100,8 +98,11 @@ include('includes/header_crud.php');
                                     <p><small class="text-muted">Autor: <?php echo htmlspecialchars($row['IdAutor']); ?></small></p>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="mod_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-secondary">Modificar</a>
-                                    <a href="delete_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-danger">Eliminar</a>
+                                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
+    <a href="mod_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-secondary">Modificar</a>
+    <a href="delete_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-danger">Eliminar</a>
+<?php } ?>
+
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
