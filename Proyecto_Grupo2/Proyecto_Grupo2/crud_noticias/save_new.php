@@ -6,9 +6,9 @@ if (isset($_POST['save_new'])) {
     $Titulo = $_POST['Titulo'];
     $Contenido = $_POST['Contenido'];
     $Fecha = $_POST['Fecha'];
-    $IdAutor = $_POST['IdAutor'];
-    $IdCategoria = $_POST['IdCategoria'];
-    $imagen = $_POST['Imagen']; 
+    $IdAutor = $_POST['IdAutor']; 
+    $IdCategoria = $_POST['IdCategoria']; 
+    $imagen = $_POST['Imagen'];
     
     $query = "INSERT INTO noticia (Num_Noticia, Titulo, Contenido, Fecha, IdAutor, IdCategoria, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
@@ -30,5 +30,6 @@ if (isset($_POST['save_new'])) {
         mysqli_stmt_close($stmt);
     }
 }
+
 
 

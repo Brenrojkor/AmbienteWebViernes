@@ -13,10 +13,9 @@ if (isset($_SESSION['rol'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Título de la Página</title>
+    <title>Polideportivo-Santo-Domingo</title>
    
     <style>
-        /* Estilos para la barra de navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -33,7 +32,6 @@ if (isset($_SESSION['rol'])) {
 </head>
 <body>
     <div class="navbar">
-        
         <div class="user-info">
             <?php echo "Rol actual: $rol"; ?> <!-- Mostrar el rol del usuario -->
             <a href="logout.php">Cerrar Sesión</a> <!-- Enlace para cerrar sesión -->

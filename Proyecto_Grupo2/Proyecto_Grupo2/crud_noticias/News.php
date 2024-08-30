@@ -1,10 +1,7 @@
 <?php
 include "db.php";
-
-
-include('includes/header_crud.php');
+include('header_crud.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,13 +27,10 @@ include('includes/header_crud.php');
     </style>
 </head>
 <body>
-
 <main class="container-fluid p-4">
     <div class="row">
         <div class="col-12">
-            <!-- Título agregado -->
             <h1 class="mb-4">Noticias</h1>
-
             <?php if (isset($_SESSION['message'])) { ?>
                 <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
                     <?= $_SESSION['message']?>
@@ -47,17 +41,18 @@ include('includes/header_crud.php');
             <?php unset($_SESSION['message'], $_SESSION['message_type']); } ?>
 
             <!-- Botón para abrir la ventana modal -->
-           
-                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
-            <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#nuevaNoticiaModal">
-                Nueva
-            </button>
-        <?php } ?>
-
+            <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
+                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#nuevaNoticiaModal">
+                    Nueva
+                </button>
+            <?php } ?>
 
             <div class="row">
                 <?php
-                $query = "SELECT * FROM noticia";
+                $query = "SELECT n.*, a.Nombre AS NombreAutor, c.Nombre AS NombreCategoria 
+                          FROM noticia n 
+                          JOIN autores a ON n.IdAutor = a.IdAutor 
+                          JOIN categoria c ON n.IdCategoria = c.IdCategoria";
                 $result = mysqli_query($conn, $query);
 
                 if (!$result) {
@@ -73,7 +68,8 @@ include('includes/header_crud.php');
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($row['Titulo']); ?></h5>
                                 <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($row['Fecha']); ?></small></p>
-                                <p class="card-text"><small class="text-muted">Categoría: <?php echo htmlspecialchars($row['IdCategoria']); ?></small></p>
+                                <p class="card-text"><small class="text-muted">Categoría: <?php echo htmlspecialchars($row['NombreCategoria']); ?></small></p>
+                                <p class="card-text"><small class="text-muted">Autor: <?php echo htmlspecialchars($row['NombreAutor']); ?></small></p>
                             </div>
                         </div>
                     </div>
@@ -94,15 +90,14 @@ include('includes/header_crud.php');
                                     <?php endif; ?>
                                     <p><?php echo htmlspecialchars($row['Contenido']); ?></p>
                                     <p><small class="text-muted">Fecha: <?php echo htmlspecialchars($row['Fecha']); ?></small></p>
-                                    <p><small class="text-muted">Categoría: <?php echo htmlspecialchars($row['IdCategoria']); ?></small></p>
-                                    <p><small class="text-muted">Autor: <?php echo htmlspecialchars($row['IdAutor']); ?></small></p>
+                                    <p><small class="text-muted">Categoría: <?php echo htmlspecialchars($row['NombreCategoria']); ?></small></p>
+                                    <p><small class="text-muted">Autor: <?php echo htmlspecialchars($row['NombreAutor']); ?></small></p>
                                 </div>
                                 <div class="modal-footer">
-                                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
-    <a href="mod_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-secondary">Modificar</a>
-    <a href="delete_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-danger">Eliminar</a>
-<?php } ?>
-
+                                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
+                                        <a href="mod_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-secondary">Modificar</a>
+                                        <a href="delete_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-danger">Eliminar</a>
+                                    <?php } ?>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
@@ -110,7 +105,6 @@ include('includes/header_crud.php');
                     </div>
                 <?php } ?>
             </div>
-
         </div>
     </div>
 </main>
@@ -140,10 +134,26 @@ include('includes/header_crud.php');
                         <input type="date" name="Fecha" class="form-control" placeholder="Fecha" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="IdAutor" class="form-control" placeholder="ID Autor" required>
+                        <select name="IdAutor" class="form-control" required>
+                            <?php
+                            $autorQuery = "SELECT IdAutor, Nombre FROM autores";
+                            $autorResult = mysqli_query($conn, $autorQuery);
+                            while ($autor = mysqli_fetch_assoc($autorResult)) {
+                                echo "<option value='{$autor['IdAutor']}'>{$autor['Nombre']}</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="IdCategoria" class="form-control" placeholder="ID Categoría" required>
+                        <select name="IdCategoria" class="form-control" required>
+                            <?php
+                            $categoriaQuery = "SELECT IdCategoria, Nombre FROM categoria";
+                            $categoriaResult = mysqli_query($conn, $categoriaQuery);
+                            while ($categoria = mysqli_fetch_assoc($categoriaResult)) {
+                                echo "<option value='{$categoria['IdCategoria']}'>{$categoria['Nombre']}</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="text" name="Imagen" class="form-control" placeholder="URL de la Imagen" required>
@@ -154,8 +164,6 @@ include('includes/header_crud.php');
         </div>
     </div>
 </div>
-
-<?php include('includes/footer_crud.php'); ?>
 
 <script>
     var cards = document.querySelectorAll('.card-custom');
