@@ -95,7 +95,16 @@ include('header_crud.php');
                                 </div>
                                 <div class="modal-footer">
                                     <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
-                                        <a href="mod_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-secondary">Modificar</a>
+                                        <a href="#" class="btn btn-secondary btnModificarNoticia" data-toggle="modal" data-target="#modificarNoticiaModal"
+   data-id="<?php echo htmlspecialchars($row['Num_Noticia']); ?>"
+   data-titulo="<?php echo htmlspecialchars($row['Titulo']); ?>"
+   data-contenido="<?php echo htmlspecialchars($row['Contenido']); ?>"
+   data-fecha="<?php echo htmlspecialchars($row['Fecha']); ?>"
+   data-autor="<?php echo htmlspecialchars($row['IdAutor']); ?>"
+   data-categoria="<?php echo htmlspecialchars($row['IdCategoria']); ?>"
+   data-imagen="<?php echo htmlspecialchars($row['Imagen']); ?>">
+   Modificar
+</a>
                                         <a href="delete_new.php?id=<?php echo urlencode($row['Num_Noticia']); ?>" class="btn btn-danger">Eliminar</a>
                                     <?php } ?>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -165,6 +174,61 @@ include('header_crud.php');
     </div>
 </div>
 
+<!-- Ventana Modal para modificar una noticia -->
+<div class="modal fade" id="modificarNoticiaModal" tabindex="-1" role="dialog" aria-labelledby="modificarNoticiaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modificarNoticiaModalLabel">Modificar Noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formModificarNoticia" action="mod_new.php" method="POST">
+                    <input type="hidden" name="Num_Noticia" id="modNum_Noticia">
+                    <div class="form-group">
+                        <input type="text" name="Titulo" id="modTitulo" class="form-control" placeholder="Título" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Contenido" id="modContenido" class="form-control" placeholder="Contenido" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="Fecha" id="modFecha" class="form-control" placeholder="Fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="IdAutor" id="modIdAutor" class="form-control" required>
+                            <?php
+                            $autorQuery = "SELECT IdAutor, Nombre FROM autores";
+                            $autorResult = mysqli_query($conn, $autorQuery);
+                            while ($autor = mysqli_fetch_assoc($autorResult)) {
+                                echo "<option value='{$autor['IdAutor']}'>{$autor['Nombre']}</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="IdCategoria" id="modIdCategoria" class="form-control" required>
+                            <?php
+                            $categoriaQuery = "SELECT IdCategoria, Nombre FROM categoria";
+                            $categoriaResult = mysqli_query($conn, $categoriaQuery);
+                            while ($categoria = mysqli_fetch_assoc($categoriaResult)) {
+                                echo "<option value='{$categoria['IdCategoria']}'>{$categoria['Nombre']}</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Imagen" id="modImagen" class="form-control" placeholder="URL de la Imagen" required>
+                    </div>
+                    <input type="submit" name="mod_new" class="btn btn-success btn-block" value="Modificar noticia">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
     var cards = document.querySelectorAll('.card-custom');
     cards.forEach(function(card) {
@@ -177,6 +241,27 @@ include('header_crud.php');
         });
     });
 </script>
+
+<script>
+    $(document).on('click', '.btnModificarNoticia', function () {
+        var numNoticia = $(this).data('id');
+        var titulo = $(this).data('titulo');
+        var contenido = $(this).data('contenido');
+        var fecha = $(this).data('fecha');
+        var autor = $(this).data('autor');
+        var categoria = $(this).data('categoria');
+        var imagen = $(this).data('imagen');
+
+        $('#modNum_Noticia').val(numNoticia);
+        $('#modTitulo').val(titulo);
+        $('#modContenido').val(contenido);
+        $('#modFecha').val(fecha);
+        $('#modIdAutor').val(autor);
+        $('#modIdCategoria').val(categoria);
+        $('#modImagen').val(imagen);
+    });
+</script>
+
 
 </body>
 </html>
