@@ -48,7 +48,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
                             aria-expanded="false" aria-controls="collapseTwo">
-                            ¿Cómo puedo contactaer al equipo de soporte?
+                            ¿Cómo puedo contactar al equipo de soporte?
                         </button>
                     </h2>
                 </div>
