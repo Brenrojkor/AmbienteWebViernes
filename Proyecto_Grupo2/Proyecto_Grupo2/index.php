@@ -279,7 +279,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="title">
-                                <h2>Nuestra <br><strong class="black"> Galería</strong></h2>
+                                <h2>Nuestra <strong class="black"> Galería</strong></h2>
                                 <span>Estas son algunas fotos de algunas de nuestras actividades</span>
                             </div>
                         </div>
@@ -331,79 +331,31 @@
             <!-- end Gallery -->
 
             <!-- Reviwe -->
-            <div id="review" class="Reviwe">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>COACH</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="Reviwe_box">
-                                <i><img src="images/coach.jpg" alt="#"/></i>
-                                <h3>Jessica</h3>
-                                <p>Entrenadora de futbol y basketball
-                                    <br>También es la profesora de ballet</p>
-
-                            </div>
-                        </div>
-                    </div>
+            <div id="review" class="Reviwe" style="margin-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>COACH</h2>
                 </div>
             </div>
-            <!-- end Reviwe -->
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="Reviwe_box">
+                    <i><img src="images/coach.jpg" alt="#"/></i>
+                    <h3>Jessica</h3>
+                    <p>Entrenadora de futbol y basketball
+                        <br>También es la profesora de ballet</p>
 
-            <!-- footer -->
-            <div id="contact" class="contact">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>Nuestro<strong class="black"> Contacto</strong></h2>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="container-fluid padddd">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
-                    <div class="map_section">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        </div>
+    </div>
+</div>
 
-                                    <form class="main_form">
-                                        <div class="row">
-
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <input class="form-control" placeholder="Name" type="text" name="Name">
-                                            </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <input class="form-control" placeholder="Email" type="text" name="Email">
-                                            </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <input class="form-control" placeholder="Phone" type="text" name="Phone">
-                                            </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                                            </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <button class="send">Enviar</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="map">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
+            <!-- end Reviwe -->  
+        <div id="map"></div>
         </div>
         <footer>
             <div class="footer">
@@ -417,7 +369,7 @@
                                 <ul class="social_icon">
                                     <li> <a href="https://www.facebook.com/pages/Polideportivo-Santo-Domingo/221359424559175"><i class="fa fa-facebook-f"></i></a></li>
                                     <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li> <a href="https://www.instagram.com/explore/locations/4374140/polideportivo-santo-domingo/?hl=es"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -480,6 +432,25 @@
             });
         }
     </script>
+
+<script>
+  let body = document.querySelector("body"),
+      lightBox = document.querySelector(".lightBox"),
+      img = document.querySelectorAll(".gImg"),
+      showImg = lightBox.querySelector(".showImg img"),
+      close = lightBox .querySelector(".close");
+     for (let image of img) {
+       image.addEventListener("click", ()=>{
+         showImg.src = image.src;
+         lightBox.style.display = "block";
+         body.style.overflow = "hidden";
+         close.onclick = ()=>{
+           lightBox.style.display = "none";
+           body.style.overflow = "visible";
+         };
+       });
+     }
+  </script>
     <!-- google map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
     <!-- end google map js -->
