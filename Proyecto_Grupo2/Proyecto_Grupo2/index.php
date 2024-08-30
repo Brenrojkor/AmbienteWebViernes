@@ -64,21 +64,21 @@
     </li>
 
     <li>
-        <a href="#noticias">Noticias</a>
+        <a href="crud_noticias/News.php">Noticias</a>
     </li>
 
     <li>
         <a href="#eventosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos</a>
         <ul class="collapse list-unstyled" id="eventosSubmenu">
             <li><a href="calendario.php">Calendario</a></li>
-            <li><a href="#actividades">Actividades</a></li>
+            <li><a href="Actividades.php">Actividades</a></li>
         </ul>
     </li>
 
     <li>
         <a href="#contactoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contacto</a>
         <ul class="collapse list-unstyled" id="contactoSubmenu">
-            <li><a href="#soporte">Soporte</a></li>
+            <li><a href="soporte.php">Soporte</a></li>
             <li><a href="faq.php">Preguntas frecuentes</a></li>
         </ul>
     </li>
