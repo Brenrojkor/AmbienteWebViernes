@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -52,6 +51,20 @@ CREATE TABLE `autores` (
   `Telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Se le quitó la columna Apellido
+ALTER TABLE autores
+DROP COLUMN Apellido;
+
+--
+-- Volcado de datos para la tabla `autores`
+--
+
+INSERT INTO `autores` (`IdAutor`, `Nombre`, `Email`, `Telefono`) VALUES
+(1, 'Adrián Sibaja', 'adr.@sibaja.com', '11700065'),
+(2, 'Keren Solera', 'sol.@keren.com', '14570065'),
+(3, 'Javiera Navarro', 'javi.@kiwi.com', '11785065');
+
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +75,17 @@ CREATE TABLE `categoria` (
   `IdCategoria` int(11) NOT NULL,
   `Nombre` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`IdCategoria`, `Nombre`) VALUES
+(1, 'Eventos'),
+(2, 'Recreativos'),
+(3, 'Salud y bienestar'),
+(4, 'Deportes'),
+(5, 'Torneos');
 
 -- --------------------------------------------------------
 
@@ -164,6 +188,12 @@ CREATE TABLE `noticia` (
   `IdAutor` int(11) DEFAULT NULL,
   `IdCategoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Se le agregó una columna para el URL de la imagen
+--
+ALTER TABLE noticia
+ADD COLUMN Imagen varchar(1024) DEFAULT NULL;
 
 -- --------------------------------------------------------
 
@@ -372,6 +402,7 @@ ALTER TABLE `reservas`
   ADD CONSTRAINT `reservas_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `reservas_ibfk_2` FOREIGN KEY (`Actividad`) REFERENCES `actividades` (`Num_Activ`);
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

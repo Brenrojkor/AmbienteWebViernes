@@ -29,14 +29,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
-
 <body class="main-layout">
-
-
-
-
-
-
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="" /></div>
@@ -188,7 +181,7 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 pppp">
                             <div class="black_box">
-                                <h3>Entrenamiento de Fútbol</h3>
+                                <h3>Fútbol</h3>
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 pppp">
@@ -203,7 +196,7 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 pppp">
                             <div class="black_box yellow_box">
-                                <h3>Entrenamiento de Basketball</h3>
+                                <h3>Basketball</h3>
                             </div>
                         </div>
                     </div>
@@ -249,29 +242,29 @@
                         <div class="row">
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="training_packages_box">
-                                    <h3>Clase de Zumba</h3><br>
+                                    <h3>Clase de Yoga</h3><br>
                                     <h3>10am-11am</h3>
                                     <span>₡<strong class="white_bold">500</strong></span>
                                     <p>Martes</p>
-                                    <a class="BookNow" href="#">Más</a>
+                                    <a class="BookNow" href="yoga.php">Más</a>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="training_packages_box">
-                                    <h3>Clase de Ballet</h3><br>
+                                    <h3>Clase de tenis</h3><br>
                                     <h3>5pm-7pm</h3>
                                     <span>₡<strong class="white_bold">1000</strong></span>
                                     <p>Viernes</p>
-                                    <a class="BookNow" href="#">Más</a>
+                                    <a class="BookNow" href="tenis.php">Más</a>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="training_packages_box">
-                                    <h3>Educación Física para niños</h3><br>
+                                    <h3>Fútbol para niños</h3><br>
                                     <h3>8am-10am</h3>
                                     <span><strong class="white_bold">FREE</strong></span>
                                     <p>Jueves</p>
-                                    <a class="BookNow" href="#">Más</a>
+                                    <a class="BookNow" href="futbol.php">Más</a>
                                 </div>
                             </div>
                         </div>
