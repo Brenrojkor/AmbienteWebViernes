@@ -190,9 +190,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                  <!-- Formulario de matrícula -->
-                 <div class="formulario-matricula">
-                    <h3>Formulario de matrícula</h3>
-                    <form method="post" enctype="multipart/form-data">
+                <div class="formulario-matricula">
+                    <h3>Formulario de Asistencia</h3>
+                    <form>
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -202,24 +202,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" class="form-control" id="apellido" name="apellido" required>
                         </div>
                         <div class="form-group">
-                            <label for="deporte">Deporte Interesado</label>
-                            <input type="text" class="form-control" id="deporte" name="deporte" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">Edad del interesado</label>
-                            <input type="number" class="form-control" id="edad" name="edad" required>
-                        </div>
-                        <div class="form-group">
                             <label for="telefono">Teléfono</label>
                             <input type="text" class="form-control" id="telefono" name="telefono" required>
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo electrónico</label>
                             <input type="email" class="form-control" id="correo" name="correo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="documento">Dictamen Médico</label>
-                            <input type="file" class="form-control-file" id="documento" name="documento" accept=".pdf">
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
