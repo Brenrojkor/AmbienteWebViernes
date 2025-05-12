@@ -1,2 +1,2 @@
-# AmbienteWebViernes
-Repositorio para subir avances o practicas programadas 
+# Website for Santo Domingo Sports Center 
+
