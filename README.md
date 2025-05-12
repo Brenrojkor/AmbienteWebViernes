@@ -6,7 +6,7 @@ This repository contains the development of a website for the **Santo Domingo Sp
 
 - **User Management**: Registration, login, and user profile administration.
 - **Class Reservations**: A system for booking and managing sports classes.
-- **Service Information**: Details about facilities, schedules, and available trainers.
+- **Service Information**: Details about the Sports Center
 - **Responsive Design**: Optimized for different screen sizes and devices.
 
 ## 🛠️ Technologies Used
